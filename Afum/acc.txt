@@ -1,0 +1,7 @@
+Accession	Category	Label
+SRR836437	CONTROL	Control_1
+SRR836438	CONTROL	Control_2
+SRR836439	CONTROL	Control_3
+SRR836440	methylprednisolone	Exp_1
+SRR836441	methylprednisolone	Exp_2
+SRR836442	methylprednisolone	Exp_3

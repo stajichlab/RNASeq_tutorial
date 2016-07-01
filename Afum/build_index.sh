@@ -1,0 +1,2 @@
+module load bowtie2
+bowtie2-build genome/FungiDB-28_Afumigatus_Af293_Genome.fasta genome/FungiDB-28_Afumigatus_Af293_Genome.fasta
