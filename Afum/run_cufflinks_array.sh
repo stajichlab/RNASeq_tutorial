@@ -1,6 +1,5 @@
-#PBS -l nodes=1:ppn=8,mem=2gb -j oe -N tophat
-module load bowtie2
-module load tophat
+#PBS -l nodes=1:ppn=8,mem=2gb -j oe -N cufflinks
+module load cufflinks
 N=$PBS_ARRAYID
 CPU=$PBS_NUM_PPN
 if [ ! $CPU ]; then
@@ -15,5 +14,7 @@ if [ ! $N ]; then
 fi
 R=`grep -v ^Accession acc.txt | sed -n ${N}p | awk '{print $1}'`
 echo $R
-tophat -o tophat_out_${R} -G genome/FungiDB-28_Afumigatus_Af293.gff --b2-very-fast -I 3000  -p 8 genome/FungiDB-28_Afumigatus_Af293_Genome.fasta fastq/${R}.fastq
+if [ ! -f cuffquant_${R}/abundances.cxb ]; then
+ cuffquant genome/FungiDB-28_Afumigatus_Af293.gff tophat_out_${R}/accepted_hits.bam -p $CPU -o cuffquant_${R}
+fi
 
