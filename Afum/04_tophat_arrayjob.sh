@@ -15,5 +15,5 @@ if [ ! $N ]; then
 fi
 R=`grep -v ^Accession acc.txt | sed -n ${N}p | awk '{print $1}'`
 echo $R
-tophat -o tophat_out_${R} -G genome/FungiDB-28_Afumigatus_Af293.gff --b2-very-fast -I 3000  -p 8 genome/FungiDB-28_Afumigatus_Af293_Genome.fasta fastq/${R}.fastq
+tophat -o tophat_out_${R} -G genome/FungiDB-28_Afumigatus_Af293.gff  --b2-very-sensitive -I 3000  -p 8 genome/FungiDB-28_Afumigatus_Af293_Genome.fasta fastq/${R}.fastq
 
