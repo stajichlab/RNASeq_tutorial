@@ -1,2 +1,4 @@
 # RNASeq_tutorial
-Tutorial on RNASeq
+
+Material on RNASeq tutorial with a focus on fungal data
+
